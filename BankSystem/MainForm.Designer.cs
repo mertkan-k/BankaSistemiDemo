@@ -76,7 +76,7 @@
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(15, 87);
+            this.buttonLogin.Location = new System.Drawing.Point(22, 91);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(84, 23);
             this.buttonLogin.TabIndex = 4;
@@ -86,7 +86,7 @@
             // 
             // buttonRegister
             // 
-            this.buttonRegister.Location = new System.Drawing.Point(125, 87);
+            this.buttonRegister.Location = new System.Drawing.Point(125, 91);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(84, 23);
             this.buttonRegister.TabIndex = 5;
@@ -99,7 +99,7 @@
             this.labelInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelInfo.AutoSize = true;
-            this.labelInfo.Location = new System.Drawing.Point(12, 66);
+            this.labelInfo.Location = new System.Drawing.Point(12, 70);
             this.labelInfo.Name = "labelInfo";
             this.labelInfo.Size = new System.Drawing.Size(61, 13);
             this.labelInfo.TabIndex = 6;
@@ -110,7 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(234, 121);
+            this.ClientSize = new System.Drawing.Size(234, 123);
             this.Controls.Add(this.labelInfo);
             this.Controls.Add(this.buttonRegister);
             this.Controls.Add(this.buttonLogin);

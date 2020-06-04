@@ -13,11 +13,6 @@ namespace BankSystem
 {
     partial class UILog : Form
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
-
         private ulong pid;
 
         public UILog(ulong pid_)

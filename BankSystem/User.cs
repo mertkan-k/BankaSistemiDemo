@@ -117,6 +117,11 @@ namespace BankSystem
             }
         }
 
+        static public bool IsAdmin(User user)
+        {
+            return user.id == 1;
+        }
+
         static public User FindUser(ulong id)
         {
             foreach (var user in UserData)
@@ -260,7 +265,7 @@ namespace BankSystem
             if (user == null)
                 return PaymentRet.INVALID_USER;
 
-            if (! BusinessManager.Instance.Find(businesID, out business))
+            if (!BusinessManager.Instance.Find(businesID, out business))
                 return PaymentRet.INVALID_USER;
 
             if (user.password != pass)

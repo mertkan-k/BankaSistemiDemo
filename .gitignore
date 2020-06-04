@@ -338,5 +338,5 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
-WindowsFormsApp1/bin/Debug/account.json
-WindowsFormsApp1/bin/Debug/log.json
+BankSystem/bin/Debug/account.json
+BankSystem/bin/Debug/log.json

@@ -35,8 +35,8 @@ namespace BankSystem
         private Label labelInf3;
         private TextBox textBoxPassword;
         public bool validCash = false;
-        private PictureBox pictureBoxBank;
         private Label labelBank;
+        private PictureBox pictureBoxBank;
         private UIForm _Owner;
 
         public UISpendMoney(UIForm _Owner, ulong sourceUser)
@@ -199,11 +199,11 @@ namespace BankSystem
             // pictureBoxBank
             // 
             this.pictureBoxBank.Image = global::BankSystem.Properties.Resources.n11;
-            this.pictureBoxBank.Location = new System.Drawing.Point(26, 87);
+            this.pictureBoxBank.Location = new System.Drawing.Point(26, 88);
             this.pictureBoxBank.Name = "pictureBoxBank";
-            this.pictureBoxBank.Size = new System.Drawing.Size(26, 22);
+            this.pictureBoxBank.Size = new System.Drawing.Size(27, 26);
             this.pictureBoxBank.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxBank.TabIndex = 9;
+            this.pictureBoxBank.TabIndex = 11;
             this.pictureBoxBank.TabStop = false;
             this.pictureBoxBank.Visible = false;
             // 
@@ -212,8 +212,8 @@ namespace BankSystem
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(253, 285);
-            this.Controls.Add(this.labelBank);
             this.Controls.Add(this.pictureBoxBank);
+            this.Controls.Add(this.labelBank);
             this.Controls.Add(this.labelInf3);
             this.Controls.Add(this.labelInfo);
             this.Controls.Add(this.textBoxPassword);
