@@ -88,11 +88,27 @@ namespace BankSystem
         {
             ReadSystem();
 
+            if (pid == 0)
+            {
+                output = LogData;
+            }
+
             foreach (Log log in LogData)
             {
                 if (log.user_id == pid)
                     output.Add(log);
             }
+        }
+
+        static public void Reset()
+        {
+            ReadSystem();
+
+            // LogData.RemoveAll(log => !User.IsAdmin(log.user_id));
+
+            LogData.Clear();
+
+            SaveSystem();
         }
 
     }

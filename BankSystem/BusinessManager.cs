@@ -24,6 +24,9 @@ namespace BankSystem
         {
             BusinessDic = new Dictionary<ulong, Business>();
             BusinessDic[1] = new Business("N11", Resources.n11);
+            BusinessDic[2] = new Business("HepsiBurada", Resources.hepsiburada);
+            BusinessDic[3] = new Business("Trendyol", Resources.trendyol);
+            BusinessDic[4] = new Business("Amazon", Resources.amazon);
         }
 
         public static BusinessManager Instance = new BusinessManager();

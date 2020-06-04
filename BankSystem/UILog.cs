@@ -15,18 +15,28 @@ namespace BankSystem
     {
         private ulong pid;
 
+        public UILog()
+        {
+            InitializeComponent();
+
+            pid = 0;
+
+            RefreshGUI();
+        }
+
         public UILog(ulong pid_)
         {
             InitializeComponent();
 
             pid = pid_;
 
-            Refresh();
+            RefreshGUI();
         }
 
         private void InitializeComponent()
         {
             this.listLog = new System.Windows.Forms.ListView();
+            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.comment = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cash = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -36,6 +46,7 @@ namespace BankSystem
             // listLog
             // 
             this.listLog.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.id,
             this.date,
             this.comment,
             this.cash});
@@ -46,6 +57,11 @@ namespace BankSystem
             this.listLog.TabIndex = 0;
             this.listLog.UseCompatibleStateImageBehavior = false;
             this.listLog.View = System.Windows.Forms.View.Details;
+            // 
+            // id
+            // 
+            this.id.Text = "Kullanıcı No";
+            this.id.Width = 80;
             // 
             // date
             // 
@@ -58,6 +74,7 @@ namespace BankSystem
             // cash
             // 
             this.cash.Text = "Son Bakiye";
+            this.cash.Width = 80;
             // 
             // buttonRefresh
             // 
@@ -69,7 +86,7 @@ namespace BankSystem
             this.buttonRefresh.UseVisualStyleBackColor = true;
             this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
-            // LogUI
+            // UILog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -77,7 +94,7 @@ namespace BankSystem
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.listLog);
             this.MaximizeBox = false;
-            this.Name = "LogUI";
+            this.Name = "UILog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "İşlem Geçmişi";
             this.ResumeLayout(false);
@@ -88,22 +105,26 @@ namespace BankSystem
         private System.Windows.Forms.ColumnHeader date;
         private System.Windows.Forms.ColumnHeader comment;
         private Button buttonRefresh;
+        private ColumnHeader id;
         private System.Windows.Forms.ColumnHeader cash;
 
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
-            Refresh();
+            RefreshGUI();
         }
 
-        public void Refresh()
+        public void RefreshGUI()
         {
             List<Log> logData = new List<Log>();
             Log.GetAllLog(pid, ref logData);
 
+            listLog.Items.Clear();
+
             foreach (Log log in logData)
             {
                 ListViewItem listLogItem = new ListViewItem();
-                listLogItem.Text = log.date.ToString();
+                listLogItem.Text = log.user_id.ToString();
+                listLogItem.SubItems.Add(log.date.ToString());
                 listLogItem.SubItems.Add(log.comment);
                 listLogItem.SubItems.Add(log.cash.ToString("C", CultureInfo.CurrentCulture));
 
@@ -115,5 +136,6 @@ namespace BankSystem
             else
                 listLog.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
         }
+
     }
 }

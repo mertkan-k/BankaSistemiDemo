@@ -73,9 +73,39 @@ namespace BankSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap amazon {
+            get {
+                object obj = ResourceManager.GetObject("amazon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hepsiburada {
+            get {
+                object obj = ResourceManager.GetObject("hepsiburada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap n11 {
             get {
                 object obj = ResourceManager.GetObject("n11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trendyol {
+            get {
+                object obj = ResourceManager.GetObject("trendyol", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

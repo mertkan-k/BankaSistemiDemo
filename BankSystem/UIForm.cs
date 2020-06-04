@@ -147,6 +147,7 @@ namespace BankSystem
             this.Name = "UIForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Banka Sistemi";
+            this.Load += new System.EventHandler(this.UIForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,6 +221,21 @@ namespace BankSystem
                 Owner = this
             };
             SpendMoneyForm.Show();
+        }
+
+        private void UIForm_Load(object sender, System.EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+
+            toolTip.AutoPopDelay = 5000;
+            toolTip.InitialDelay = 1000;
+            toolTip.ReshowDelay = 500;
+            toolTip.ShowAlways = true;
+
+            toolTip.SetToolTip(this.buttonChangePassword, "Şifreni değiştireceğin alana git.");
+            toolTip.SetToolTip(this.buttonGetMoney, "Fatura ödeme alanına git.");
+            toolTip.SetToolTip(this.buttonHistory, "Hesabında yapılan değişiklikleri görüntüle.");
+            toolTip.SetToolTip(this.buttonSendMoney, "Başka hesaplara havale yap.");
         }
     }
 }

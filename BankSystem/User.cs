@@ -117,9 +117,13 @@ namespace BankSystem
             }
         }
 
+        static public bool IsAdmin(ulong id)
+        {
+            return id == 1;
+        }
         static public bool IsAdmin(User user)
         {
-            return user.id == 1;
+            return IsAdmin(user.id);
         }
 
         static public User FindUser(ulong id)
@@ -281,6 +285,20 @@ namespace BankSystem
             new Log(user, String.Format(@"'{0}' işmerkezine {1} tutarında fatura ödemesi.", business.name, cash.ToString("C", CultureInfo.CurrentCulture)));
 
             return PaymentRet.SUCCES;
+        }
+
+        static public void GetUserData(out List<User> list)
+        {
+            list = UserData;
+        }
+
+        static public void Reset()
+        {
+            ReadSystem();
+
+            UserData.RemoveAll(user => !IsAdmin(user.id));
+
+            SaveSystem();
         }
     }
 }

@@ -374,6 +374,15 @@ namespace BankSystem
         private void TransferUI_Load(object sender, EventArgs e)
         {
             this.CenterToParent();
+
+            ToolTip toolTip = new ToolTip();
+
+            toolTip.AutoPopDelay = 5000;
+            toolTip.InitialDelay = 1000;
+            toolTip.ReshowDelay = 500;
+            toolTip.ShowAlways = true;
+
+            toolTip.SetToolTip(this.buttonSendMoney, "Belirlediğin şekilde havale işlemini gerçekleştir.");
         }
 
         private void buttonSendMoney_Click(object sender, EventArgs e)

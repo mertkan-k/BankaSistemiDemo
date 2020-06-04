@@ -15,6 +15,16 @@ namespace BankSystem
         private void Form_Load(object sender, EventArgs e)
         {
             User.ReadSystem();
+
+            ToolTip toolTip = new ToolTip();
+
+            toolTip.AutoPopDelay = 5000;
+            toolTip.InitialDelay = 1000;
+            toolTip.ReshowDelay = 500;
+            toolTip.ShowAlways = true;
+
+            toolTip.SetToolTip(this.buttonLogin, "Giriş yap.");
+            toolTip.SetToolTip(this.buttonRegister, "Kayıt ol.");
         }
 
         private void textBoxUserName_KeyDown(object sender, KeyEventArgs e)
@@ -54,7 +64,24 @@ namespace BankSystem
 
                 labelInfo.Text = "Giriş başarılı, lütfen bekleyiniz.";
 
-                Form UIform = new UIForm(lgnUser.id);
+                Form UIform;
+
+                if (User.IsAdmin(lgnUser))
+                {
+                    UIform = new UIAdmin(lgnUser)
+                    {
+                        Owner = this
+                    };
+                }
+                else
+                {
+                    UIform = new UIForm(lgnUser.id)
+                    {
+                        Owner = this
+                    };
+                    new Log(lgnUser, "Hesaba giriş yapıldı.");
+                }
+
                 userForm = UIform;
                 UIform.Show();
 

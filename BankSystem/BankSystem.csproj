@@ -50,6 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessManager.cs" />
+    <Compile Include="UIAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UISpendMoney.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +66,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Log.cs" />
+    <Compile Include="UIUserMan.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="User.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -75,6 +81,9 @@
     <Compile Include="UIForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="UIAdmin.resx">
+      <DependentUpon>UIAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UIChangePass.resx">
       <DependentUpon>UIChangePass.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,6 +112,9 @@
     <EmbeddedResource Include="UIForm.resx">
       <DependentUpon>UIForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UIUserMan.resx">
+      <DependentUpon>UIUserMan.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -125,6 +137,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\aibu_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hepsiburada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trendyol.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amazon.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
