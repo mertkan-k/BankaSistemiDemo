@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.textBoxUserName = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelUserName = new System.Windows.Forms.Label();
@@ -101,9 +102,8 @@
             this.labelInfo.AutoSize = true;
             this.labelInfo.Location = new System.Drawing.Point(12, 70);
             this.labelInfo.Name = "labelInfo";
-            this.labelInfo.Size = new System.Drawing.Size(61, 13);
+            this.labelInfo.Size = new System.Drawing.Size(0, 13);
             this.labelInfo.TabIndex = 6;
-            this.labelInfo.Text = "Hoşgeldiniz";
             this.labelInfo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // MainForm
@@ -119,6 +119,7 @@
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxUserName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

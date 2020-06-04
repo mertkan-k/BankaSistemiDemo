@@ -25,6 +25,8 @@ namespace BankSystem
 
             toolTip.SetToolTip(this.buttonLogin, "Giriş yap.");
             toolTip.SetToolTip(this.buttonRegister, "Kayıt ol.");
+
+            labelInfo.Text = String.Format("Hoşgeldiniz, sağlıklı günler, {0}", Environment.UserName);
         }
 
         private void textBoxUserName_KeyDown(object sender, KeyEventArgs e)

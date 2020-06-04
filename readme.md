@@ -1,5 +1,7 @@
 Banka Sistemi
 
+Uygulama dizini: BankSystem\bin\Release\BankSystem.exe 
+
 Genel olarak kullanýcý ve yöneticilerin giriþ yapýp birtakým iþlemler gerçekleþtirebildikleri basit ve anlaþýlýr arayüzlü bir uygulama.
 
 Veri deposu olarak iki adet json dosyasý üzerinden iþlemler yapýlýyor, bu dosyalarý bu program dýþýnda bir araçla editlemenizi tavsiye etmiyoruz, zira dosyalarda bozulma olmasý halinde sistem hata verip kapanacaktýr.
