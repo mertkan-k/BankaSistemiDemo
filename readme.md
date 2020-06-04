@@ -33,7 +33,7 @@ Normal(Yönetici olmayan) bi hesaba girdiðinizde yapabileceðiniz iþlemler:
 	Öncelikle iþmerkezinin numarasýný girmelisiniz.
 	Sistemde varsayýlan olarak iki adet tanýmlanmýþtýr: 1-N11 2-Hepsiburada 3-Trendyol 4-Amazon
 	Bu veriler ilgili .cs dosyasýnda kolayca deðiþtirilebilir.
-	Geçerli bir iþmerkezi numarasý girdiðinizde logsunun ve isminin yazdýðýný, ayrýca ödeme miktarýnýn aktif hale geldiðini görebilirsiniz.
+	Geçerli bir iþmerkezi numarasý girdiðinizde logosunun ve isminin yazdýðýný, ayrýca ödeme miktarýnýn aktif hale geldiðini görebilirsiniz.
 	Ýþlemlere Havale iþlemlerinde olduðu gibi devam edip iþlemleri sonrandýrabilirsini.
 	Baþarýlý bir iþlem sonrasýnda hesabýnýzda kayýt oluþturulur.
 	
