@@ -6,7 +6,7 @@ Genel olarak kullanýcý ve yöneticilerin giriþ yapýp birtakým iþlemler gerçekleþt
 
 Veri deposu olarak iki adet json dosyasý üzerinden iþlemler yapýlýyor, bu dosyalarý bu program dýþýnda bir araçla editlemenizi tavsiye etmiyoruz, zira dosyalarda bozulma olmasý halinde sistem hata verip kapanacaktýr.
 Eðer bu gibi bir sorun yaþarsanýz dosyalarý silip sistemin default olarak bu dosyalarý tekrar oluþturmasýný saðlayabilirsiniz.
-Sistem, dosyalarý kendisi oluþturduðunda ve ya yönetici hesabýný bulamadýðýnda otomatik olara 'root' isminde ve '123' þifresiyle bir yönetici hesabý oluþturacaktýr.
+Sistem, dosyalarý kendisi oluþturduðunda ve ya yönetici hesabýný bulamadýðýnda otomatik olara 'root' isminde ve '12345' þifresiyle bir yönetici hesabý oluþturacaktýr.
 
 Uygulamaya giriþ yaptýðýnýzda sizden kullanýcý ve þifre istemektedir, henüz bir hesabýný yoksa istediðiniz bilgileri girerek 'Kayýt ol' butonuna týklayarak kayýt olabilir ve ardýndan 'Giriþ Yap' butonuna týklayarak giriþ yapabilirsiniz.
 Kayýt olurken sistem otomatik oalrak sitemdeki en büyük kullanýcý numarasýna göre size bir kullanýcý numarasý ataamktadýr.
