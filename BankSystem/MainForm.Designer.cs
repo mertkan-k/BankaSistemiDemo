@@ -102,8 +102,9 @@
             this.labelInfo.AutoSize = true;
             this.labelInfo.Location = new System.Drawing.Point(12, 70);
             this.labelInfo.Name = "labelInfo";
-            this.labelInfo.Size = new System.Drawing.Size(0, 13);
+            this.labelInfo.Size = new System.Drawing.Size(104, 13);
             this.labelInfo.TabIndex = 6;
+            this.labelInfo.Text = "hosgeldin, username";
             this.labelInfo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // MainForm
