@@ -267,7 +267,7 @@ namespace BankSystem
             selectedUser.password = textBoxPassword.Text;
             selectedUser.cash = UInt64.Parse(textBoxCash.Text);
 
-            new Log(selectedUser, "Yönetici tarafından bilgileri değiştirildi.");
+            //new Log(selectedUser, "Yönetici tarafından bilgileri değiştirildi.");
 
             User.SaveSystem();
             RefreshGUI();
@@ -286,7 +286,7 @@ namespace BankSystem
                 Owner = this
             };
 
-            new Log(selectedUser, "Yönetici tarafından hesabına girildi.");
+            //new Log(selectedUser, "Yönetici tarafından hesabına girildi.");
 
             UIform.Show();
         }

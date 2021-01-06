@@ -19,7 +19,7 @@ namespace BankSystem
             ToolTip toolTip = new ToolTip();
 
             toolTip.AutoPopDelay = 5000;
-            toolTip.InitialDelay = 1000;
+            toolTip.InitialDelay = 500;
             toolTip.ReshowDelay = 500;
             toolTip.ShowAlways = true;
 
@@ -81,7 +81,7 @@ namespace BankSystem
                     {
                         Owner = this
                     };
-                    new Log(lgnUser, "Hesaba giriş yapıldı.");
+                    LogManager.GetInstance().CreateLog(lgnUser, LogManager.LogType.LOGIN);
                 }
 
                 userForm = UIform;

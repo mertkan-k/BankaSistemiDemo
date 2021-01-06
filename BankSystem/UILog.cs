@@ -116,7 +116,7 @@ namespace BankSystem
         public void RefreshGUI()
         {
             List<Log> logData = new List<Log>();
-            Log.GetAllLog(pid, ref logData);
+            LogManager.GetInstance().GetAllLog(pid, ref logData);
 
             listLog.Items.Clear();
 

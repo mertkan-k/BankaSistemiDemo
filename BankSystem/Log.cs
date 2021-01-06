@@ -8,55 +8,121 @@ using System.Windows.Forms;
 
 namespace BankSystem
 {
-    class Log
+    abstract class Log
     {
         public ulong user_id;
         public DateTime date;
         public String comment;
         public ulong cash;
 
-        private static List<Log> LogData;
-
-        Log() { } // For json
-        public Log(User user, String comment)
+        protected Log() { } // For json
+        protected Log(User user)
         {
-            ReadSystem();
-
             this.user_id = user.id;
             this.date = DateTime.Now;
-            this.comment= comment;
             this.cash = user.cash;
-
-            LogData.Add(this);
-
-            SaveSystem();
         }
-        public Log(ulong user_id, String comment, ulong cash)
+
+        protected void SetComment(String comment)
+        {
+            this.comment = comment;
+        }
+    }
+    
+    class LogManager
+    {
+        protected class JsonLog : Log
+        {
+            public JsonLog() : base()
+            {
+            }
+            public JsonLog(User user) : base(user)
+            {
+            }
+        }
+
+        protected class LoginLog : JsonLog
+        {
+            static readonly String STR = "Hesaba giriş yapıldı.";
+            public LoginLog(User user) : base(user)
+            {
+                SetComment(String.Format(STR));
+            }
+        }
+        
+        protected class AdminChangeInformationLog : JsonLog
+        {
+            static readonly String STR = "Yönetici hesap bilgileri değişimi.";
+            public AdminChangeInformationLog(User user) : base(user)
+            {
+                SetComment(String.Format(STR));
+            }
+        }
+        protected class ResetUsersLog : JsonLog
+        {
+            static readonly String STR = "Kullanıcıları sıfırlama işlemi.";
+            public ResetUsersLog(User user) : base(user)
+            {
+                SetComment(String.Format(STR));
+            }
+        }
+        protected class ResetLogsLog : JsonLog
+        {
+            static readonly String STR = "Logları sıfırlama işlemi.";
+            public ResetLogsLog(User user) : base(user)
+            {
+                SetComment(String.Format(STR));
+            }
+        }
+
+        private List<JsonLog> LogData;
+
+        private static LogManager instance = new LogManager();
+        public static LogManager GetInstance() { return instance; }
+
+        public enum LogType
+        {
+            LOGIN,
+            ADMIN_CHANGE_INFORMATION,
+            RESET_USERS,
+            RESET_LOGS,
+        }
+
+        public void CreateLog(User user, LogType logType)
         {
             ReadSystem();
 
-            this.user_id = user_id;
-            this.date = DateTime.Now;
-            this.comment= comment;
-            this.cash = cash;
-
-            LogData.Add(this);
+            switch (logType)
+            {
+                case LogType.LOGIN:
+                    LogData.Add(new LoginLog(user));
+                    break;
+                case LogType.ADMIN_CHANGE_INFORMATION:
+                    LogData.Add(new AdminChangeInformationLog(user));
+                    break;
+                case LogType.RESET_USERS:
+                    LogData.Add(new ResetUsersLog(user));
+                    break;
+                case LogType.RESET_LOGS:
+                    LogData.Add(new ResetLogsLog(user));
+                    break;
+            }
 
             SaveSystem();
         }
 
         public const string logJsonFileName = @"log.json";
-        public static void ReadSystem()
+        public void ReadSystem()
         {
             if (!File.Exists(logJsonFileName))
                 File.Create(logJsonFileName).Close();
 
             try
             {
-                LogData = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Log>>(File.ReadAllText(logJsonFileName));
+                LogData = Newtonsoft.Json.JsonConvert.DeserializeObject<List<JsonLog>>(File.ReadAllText(logJsonFileName));
 
                 if (LogData == null)
-                    LogData = new List<Log>();
+                    LogData = new List<JsonLog>();
             }
             catch
             {
@@ -68,7 +134,7 @@ namespace BankSystem
                 Application.ExitThread();
             }
         }
-        public static void SaveSystem()
+        public void SaveSystem()
         {
             try
             {
@@ -84,23 +150,18 @@ namespace BankSystem
                 Application.ExitThread();
             }
         }
-        public static void GetAllLog(ulong pid, ref List<Log> output)
+        public void GetAllLog(ulong pid, ref List<Log> output)
         {
             ReadSystem();
 
-            if (pid == 0)
-            {
-                output = LogData;
-            }
-
             foreach (Log log in LogData)
             {
-                if (log.user_id == pid)
+                if (log.user_id == pid || pid == 0)
                     output.Add(log);
             }
         }
 
-        static public void Reset()
+        public void Reset()
         {
             ReadSystem();
 

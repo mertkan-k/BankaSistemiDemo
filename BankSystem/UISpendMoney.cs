@@ -270,7 +270,7 @@ namespace BankSystem
 
             if (UInt64.TryParse(textBoxTargetNo.Text, out targetBusinessID))
             {
-                if (BusinessManager.Instance.Find(targetBusinessID, out targetBusiness))
+                if (BusinessManager.GetInstance().Find(targetBusinessID, out targetBusiness))
                 {
                     labelBank.Text = targetBusiness.name;
 

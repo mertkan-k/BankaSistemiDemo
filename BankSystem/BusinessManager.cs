@@ -29,7 +29,9 @@ namespace BankSystem
             BusinessDic[4] = new Business("Amazon", Resources.amazon);
         }
 
-        public static BusinessManager Instance = new BusinessManager();
+        private static BusinessManager Instance = new BusinessManager();
+
+        public static BusinessManager GetInstance() { return Instance; }
 
         public bool Find(ulong id, out Business outBusiness)
         {

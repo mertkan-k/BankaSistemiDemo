@@ -26,7 +26,7 @@ namespace BankSystem
             this.password = password;
             this.cash = defaultCash;
 
-            new Log(id, "Yeni müşteri varsayılan(default) bakiye yüklemesi.", this.cash);
+            // new Log(id, "Yeni müşteri varsayılan(default) bakiye yüklemesi.", this.cash);
 
             this.createTime = DateTime.Now;
         }
@@ -211,8 +211,8 @@ namespace BankSystem
 
             SaveSystem();
 
-            new Log(src, String.Format(@"{0} numaralı hesaba {1} havale gönderme işlemi.", target.id, cash.ToString("C", CultureInfo.CurrentCulture)));
-            new Log(target, String.Format(@"{0} numaralı hesapdan {1} havale alma işlemi.", src.id, cash.ToString("C", CultureInfo.CurrentCulture)));
+            //new Log(src, String.Format(@"{0} numaralı hesaba {1} havale gönderme işlemi.", target.id, cash.ToString("C", CultureInfo.CurrentCulture)));
+            //new Log(target, String.Format(@"{0} numaralı hesapdan {1} havale alma işlemi.", src.id, cash.ToString("C", CultureInfo.CurrentCulture)));
 
             return SendMoneyRet.SUCCES;
         }
@@ -247,7 +247,7 @@ namespace BankSystem
 
             SaveSystem();
 
-            new Log(user, String.Format(@"Şifre değişikliği işlemi."));
+            //new Log(user, String.Format(@"Şifre değişikliği işlemi."));
 
             return ChangePasswordRet.SUCCES;
         }
@@ -269,7 +269,7 @@ namespace BankSystem
             if (user == null)
                 return PaymentRet.INVALID_USER;
 
-            if (!BusinessManager.Instance.Find(businesID, out business))
+            if (!BusinessManager.GetInstance().Find(businesID, out business))
                 return PaymentRet.INVALID_USER;
 
             if (user.password != pass)
@@ -282,7 +282,7 @@ namespace BankSystem
 
             SaveSystem();
 
-            new Log(user, String.Format(@"'{0}' işmerkezine {1} tutarında fatura ödemesi.", business.name, cash.ToString("C", CultureInfo.CurrentCulture)));
+            //new Log(user, String.Format(@"'{0}' işmerkezine {1} tutarında fatura ödemesi.", business.name, cash.ToString("C", CultureInfo.CurrentCulture)));
 
             return PaymentRet.SUCCES;
         }

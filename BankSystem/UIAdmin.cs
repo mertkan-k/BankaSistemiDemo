@@ -78,6 +78,7 @@ namespace BankSystem
             // 
             // groupBoxDangerZone
             // 
+            this.groupBoxDangerZone.BackColor = System.Drawing.Color.Red;
             this.groupBoxDangerZone.Controls.Add(this.buttonResetLogs);
             this.groupBoxDangerZone.Controls.Add(this.buttonResetUser);
             this.groupBoxDangerZone.Location = new System.Drawing.Point(12, 183);
@@ -219,7 +220,7 @@ namespace BankSystem
             user.password = textBoxPassword.Text;
             user.username = textBoxUsername.Text;
 
-            new Log(user, "Yönetici hesap bilgileri değişimi.");
+            LogManager.GetInstance().CreateLog(user, LogManager.LogType.ADMIN_CHANGE_INFORMATION);
 
             User.SaveSystem();
 
@@ -257,13 +258,13 @@ namespace BankSystem
         private void buttonResetUser_Click(object sender, System.EventArgs e)
         {
             User.Reset();
-            new Log(user, "Kullanıcıları sıfırlama işlemi.");
+            LogManager.GetInstance().CreateLog(user, LogManager.LogType.RESET_USERS);
         }
 
         private void buttonResetLogs_Click(object sender, System.EventArgs e)
         {
-            Log.Reset();
-            new Log(user, "Logları sıfırlama işlemi.");
+            LogManager.GetInstance().Reset();
+            LogManager.GetInstance().CreateLog(user, LogManager.LogType.RESET_LOGS);
         }
 
         private void buttonLoginAsUser_Click(object sender, System.EventArgs e)
