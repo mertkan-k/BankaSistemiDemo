@@ -1,6 +1,10 @@
 Banka Sistemi
 
 Uygulama dizini: BankSystem\bin\Release\BankSystem.exe 
+Proje raporu dizini: proje_raporu.pdf
+Proje raporu linki: https://github.com/mertkan-k/BankaSistemiDemo/blob/master/proje_raporu.pdf
+Proje video linki: https://youtu.be/KnP-qOekXGw
+Kulanilan tasarim desenleri: Singleton Pattern ve Factory Pattern (pdf dosyasinda detali aciklama bulunuyor)
 
 Genel olarak kullanýcý ve yöneticilerin giriþ yapýp birtakým iþlemler gerçekleþtirebildikleri basit ve anlaþýlýr arayüzlü bir uygulama.
 
@@ -83,5 +87,3 @@ Bu panelde yapabileceðiniz iþlemler:
 	Yönetici dýþýndaki tüm hesaplarý ve bu hesaplara ait tüm loglarýn silinmesini saðlar.
 	Bu iþlem, hesabýnýzda kayýt altýna alýnýr.
 	Kullanmadan önce bir kere daha düþünün.
-
-Designed and Coded By MertkanKececi(https://github.com/mertkan-k)
